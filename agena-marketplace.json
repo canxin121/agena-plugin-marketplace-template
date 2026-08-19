@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "marketplace": {
+    "name": "Agena Plugin Marketplace Template",
+    "description": "Template repository for curated GitHub-first Agena plugin marketplaces.",
+    "homepage": "https://github.com/canxin121/agena-plugin-marketplace-template",
+    "repository": "https://github.com/canxin121/agena-plugin-marketplace-template",
+    "owner": {
+      "name": "canxin121"
+    }
+  },
+  "renames": {},
+  "plugins": []
+}
