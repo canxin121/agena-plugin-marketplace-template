@@ -22,7 +22,7 @@ jobs:
         run: >-
           cargo install --locked
           --git https://github.com/canxin121/agena
-          --rev ab0b79175ce33508f47161076c298cfcaf1a0af5
+          --rev 71981bb284f2cb4b45fa9dacc75d0075e28ab2eb
           agena-plugin-dev
       - name: Rebuild GitHub-only marketplace
         run: >-
@@ -40,7 +40,7 @@ jobs:
         run: |
           set -euo pipefail
           git fetch --no-tags --depth=1 origin "$BASE_SHA"
-          changed="$(git diff --name-status "$BASE_SHA"...HEAD -- releases || true)"
+          changed="$(git diff --name-status "$BASE_SHA" HEAD -- releases || true)"
           printf '%s\n' "$changed"
           if printf '%s\n' "$changed" | grep -Ev '^A[[:space:]]' | grep -q .; then
             echo "Published release records are immutable; only new release files may be added." >&2
