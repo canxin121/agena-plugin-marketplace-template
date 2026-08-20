@@ -20,16 +20,16 @@ jobs:
           toolchain: 1.97.0
       - name: Restore Agena plugin developer tool
         id: plugin_dev_cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .agena-tools
-          key: agena-plugin-dev-${{ runner.os }}-09609d4b84152fae7fc196d5719d30f39473555c
+          key: agena-plugin-dev-${{ runner.os }}-151e6f388d41048a989d8694a01238dbe4349722
       - name: Install pinned Agena plugin developer tool
         if: steps.plugin_dev_cache.outputs.cache-hit != 'true'
         run: >-
           cargo install --locked --root "$GITHUB_WORKSPACE/.agena-tools"
           --git https://github.com/canxin121/agena
-          --rev 09609d4b84152fae7fc196d5719d30f39473555c
+          --rev 151e6f388d41048a989d8694a01238dbe4349722
           agena-plugin-dev
       - name: Rebuild GitHub-only marketplace
         run: >-
