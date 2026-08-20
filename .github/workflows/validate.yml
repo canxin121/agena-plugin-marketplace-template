@@ -23,13 +23,13 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .agena-tools
-          key: agena-plugin-dev-${{ runner.os }}-151e6f388d41048a989d8694a01238dbe4349722
+          key: agena-plugin-dev-${{ runner.os }}-f4968e4cceb885b57670ea81ac24e495eb3dec89
       - name: Install pinned Agena plugin developer tool
         if: steps.plugin_dev_cache.outputs.cache-hit != 'true'
         run: >-
           cargo install --locked --root "$GITHUB_WORKSPACE/.agena-tools"
           --git https://github.com/canxin121/agena
-          --rev 151e6f388d41048a989d8694a01238dbe4349722
+          --rev f4968e4cceb885b57670ea81ac24e495eb3dec89
           agena-plugin-dev
       - name: Rebuild GitHub-only marketplace
         run: >-
